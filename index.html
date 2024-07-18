@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tembea Kenya - Travel Agency</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <img src="images/logo.png" alt="Tembea Kenya logo" />
+      </a>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Tembea Kenya</h1>
+        <p>Discover the Beauty of Kenya</p>
+        <a href="#destinations" class="cta-button">Explore</a>
+      </div>
+      <img src="images/hero.png" alt="hero image" />
+    </div>
+
+    <!-- Main Content -->
+    <main>
+      <div class="content">
+        <!-- Ordered List of Must-Visit Places -->
+        <section id="destinations">
+          <h2>Top 5 Must-Visit Places in Kenya</h2>
+          <ol>
+            <li>Masai Mara National Reserve</li>
+            <li>Amboseli National Park</li>
+            <li>Lamu Island</li>
+            <li>Tsavo National Park</li>
+            <li>Mount Kenya</li>
+          </ol>
+        </section>
+
+        <!-- Unordered List of Travel Tips -->
+        <section>
+          <h2>Travel Tips</h2>
+          <ul>
+            <li>Carry a good camera for capturing wildlife.</li>
+            <li>Wear comfortable clothing and shoes.</li>
+            <li>Stay hydrated and use sunscreen.</li>
+          </ul>
+        </section>
+
+        <!-- Table of Travel Packages -->
+        <section>
+          <h2>Travel Packages</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Package Name</th>
+                <th>Price</th>
+                <th>Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Masai Mara Adventure</td>
+                <td>KES 50,000</td>
+                <td>7 days</td>
+              </tr>
+              <tr>
+                <td>Amboseli Safari</td>
+                <td>KES 90,000</td>
+                <td>5 days</td>
+              </tr>
+              <tr>
+                <td>Lamu Island Escape</td>
+                <td>KES 70,000</td>
+                <td>4 days</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Booking Form -->
+        <section id="contact">
+          <h2>Booking Form</h2>
+          <form id="booking-form">
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number:</label>
+              <input
+                type="text"
+                id="phone"
+                name="phone"
+                required
+                pattern="\d{10}"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="destination">Select Destination:</label>
+              <select id="destination" name="destination">
+                <option value="masai-mara">Masai Mara</option>
+                <option value="amboseli">Amboseli</option>
+                <option value="lamu-island">Lamu Island</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="departure-date">Departure Date:</label>
+              <input
+                type="date"
+                id="departure-date"
+                name="departure-date"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="travelers">Number of Travelers:</label>
+              <input
+                type="number"
+                id="travelers"
+                name="travelers"
+                required
+                min="1"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="comments">Additional Comments:</label>
+              <textarea id="comments" name="comments"></textarea>
+            </div>
+
+            <button type="submit">Submit</button>
+            <div id="confirmation-message" class="hidden">
+              <p>
+                Your booking has been received. We will contact you shortly.
+              </p>
+              <button type="button" id="close-confirmation">Close</button>
+            </div>
+          </form>
+        </section>
+
+        <section>
+          <h2>Find out More</h2>
+          <p>
+            For more information, visit
+            <a href="https://www.magicalkenya.com" target="_blank"
+              >Magical Kenya</a
+            >
+            or
+            <a href="https://www.lonelyplanet.com/kenya" target="_blank"
+              >Lonely Planet Kenya</a
+            >.
+          </p>
+        </section>
+
+        <!-- Inserting Images -->
+        <section>
+          <h2>Attractions</h2>
+          <div class="image-grid">
+            <img src="images/maasai_mara.jpg" alt="Masai Mara" />
+            <img src="images/amboseli.jpg" alt="Amboseli" />
+            <img src="images/lamu-island.jpg" alt="Lamu Island" />
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Tembea Kenya. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
