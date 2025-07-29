@@ -32,20 +32,26 @@ nav ul {
   margin: 0;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 nav ul li {
-  margin: 0 15px;
+  margin: 5px 15px;
 }
 
 nav ul li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  padding: 8px 12px;
+  display: block;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-  text-decoration: underline;
+  background-color: #006600;
+  text-decoration: none;
 }
 
 .hero {
@@ -53,11 +59,13 @@ nav ul li a:hover {
   text-align: center;
   color: white;
   width: 100%;
+  min-height: 300px;
 }
 
 .hero img {
   width: 100%;
   height: 500px;
+  object-fit: cover;
 }
 
 .hero-content {
@@ -65,9 +73,22 @@ nav ul li a:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
+  width: 90%;
   max-width: 600px;
   color: black;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
 .cta-button {
@@ -85,7 +106,7 @@ nav ul li a:hover {
 }
 
 main {
-  padding: 20px;
+  padding: 20px 10px;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -94,16 +115,23 @@ main {
 .content {
   max-width: 800px;
   width: 100%;
+  padding: 0 15px;
 }
 
 h2 {
   color: #006600;
 }
 
+.table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 20px;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 20px;
+  min-width: 400px;
 }
 
 table,
@@ -116,6 +144,7 @@ th,
 td {
   padding: 10px;
   text-align: left;
+  white-space: nowrap;
 }
 
 th {
@@ -137,10 +166,12 @@ select,
 textarea,
 button {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-top: 5px;
   border: 1px solid #ddd;
   border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
 button {
@@ -189,20 +220,216 @@ button:hover {
 
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
 }
 
 .image-grid img {
   width: 100%;
-  height: auto;
-  border-radius: 5px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.image-grid img:hover {
+  transform: scale(1.05);
 }
 
 footer {
   background-color: #006600;
   color: white;
   text-align: center;
-  padding: 10px;
+  padding: 15px 10px;
   width: 100%;
+  margin-top: 40px;
+}
+
+/* Responsive Design - Media Queries */
+
+/* Tablet Styles (768px and below) */
+@media screen and (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .hero img {
+    height: 400px;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  nav ul li {
+    margin: 5px 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .image-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+  }
+  
+  .content {
+    padding: 0 10px;
+  }
+  
+  main {
+    padding: 15px 5px;
+  }
+  
+  table {
+    font-size: 14px;
+    min-width: 350px;
+  }
+  
+  th, td {
+    padding: 8px;
+  }
+}
+
+/* Mobile Styles (480px and below) */
+@media screen and (max-width: 480px) {
+  header img {
+    max-width: 120px;
+  }
+  
+  .hero {
+    min-height: 250px;
+  }
+  
+  .hero img {
+    height: 300px;
+  }
+  
+  .hero-content {
+    width: 95%;
+    padding: 15px;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+  
+  .hero-content p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+  
+  .cta-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+  
+  h2 {
+    font-size: 1.3rem;
+  }
+  
+  .image-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .image-grid img {
+    height: 180px;
+  }
+  
+  .form-group {
+    margin-bottom: 12px;
+  }
+  
+  input, select, textarea, button {
+    padding: 10px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  table {
+    font-size: 12px;
+    min-width: 300px;
+  }
+  
+  th, td {
+    padding: 6px;
+  }
+  
+  /* Make table scrollable on mobile */
+  .table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  nav ul li a {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+}
+
+/* Large Mobile Styles (375px and below) */
+@media screen and (max-width: 375px) {
+  .hero-content h1 {
+    font-size: 1.3rem;
+  }
+  
+  .hero-content p {
+    font-size: 0.8rem;
+  }
+  
+  .content {
+    padding: 0 5px;
+  }
+  
+  main {
+    padding: 10px 0;
+  }
+  
+  table {
+    font-size: 11px;
+    min-width: 280px;
+  }
+  
+  th, td {
+    padding: 4px;
+  }
+}
+
+/* Landscape Mobile Styles */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: 200px;
+  }
+  
+  .hero img {
+    height: 250px;
+  }
+  
+  .hero-content {
+    padding: 10px;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  
+  .hero-content p {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+}
+
+/* High DPI / Retina Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .image-grid img {
+    image-rendering: -webkit-optimize-contrast;
+  }
 }
